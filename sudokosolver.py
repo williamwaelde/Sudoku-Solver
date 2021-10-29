@@ -1,14 +1,14 @@
 # Game Board
 # 0 = empty field
 sudoku_board = [
-    [7, 8, 0, 4, 0, 0, 1, 2, 0],
-    [6, 0, 0, 0, 7, 5, 0, 0, 9],
-    [0, 0, 0, 6, 0, 1, 0, 7, 8],
+    [7, 8, 0, 9, 0, 0, 3, 2, 0],
+    [8, 0, 0, 0, 7, 5, 0, 0, 9],
+    [0, 0, 0, 6, 0, 1, 8, 7, 8],
     [0, 0, 7, 0, 4, 0, 2, 6, 0],
-    [0, 0, 1, 0, 5, 0, 9, 3, 0],
+    [0, 0, 1, 9, 5, 0, 9, 5, 0],
     [9, 0, 4, 0, 6, 0, 0, 0, 5],
-    [0, 7, 0, 3, 0, 0, 0, 1, 2],
-    [1, 2, 0, 0, 0, 7, 4, 0, 0],
+    [0, 7, 0, 4, 0, 0, 0, 1, 2],
+    [1, 2, 7, 8, 0, 7, 4, 0, 0],
     [0, 4, 9, 2, 0, 6, 0, 0, 7]
 ]
 
@@ -33,5 +33,13 @@ def print_sudokuBoard(sb):
         else:
             print(str(sb[i][j]) + " ", end="")
 
-
+#call method for output board
 print_sudokuBoard(sudoku_board)
+
+#find empty square (representet as on board)
+def find_empty_square(sb):
+    for i in range(len(sb)):
+        for j in range(len(sb[0])):
+            if sb[i][j] == 0:
+                #return tupel row & col
+                return (i, j)
